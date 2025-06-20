@@ -1,6 +1,8 @@
 let divMessages = document.querySelector("#divMessages");
 let txtitem = document.querySelector('#divInput')
 let arrListItems;
+let emptyInputAlert = document.querySelector("#emptyInputAlert");
+let alertCloseButton = emptyInputAlert.querySelector(".btn-close"); // Get the close button inside the alert
 
 if (localStorage.getItem('myList')) {
     arrListItems = JSON.parse(localStorage.getItem('myList'));
@@ -10,6 +12,11 @@ if (localStorage.getItem('myList')) {
 } else {
     arrListItems = [];
 }
+
+// Add event listener to the alert's close button to manually hide it
+alertCloseButton.addEventListener('click', () => {
+    emptyInputAlert.classList.add('d-none');
+});
 
 function createListItem(listItem) {
     let newDivElement = document.createElement("div");
@@ -30,9 +37,7 @@ function createListItem(listItem) {
     newCloseButton.className = "btn btn-danger btn-sm";
 
     newCloseButton.onclick = () => {
-        console.log(textSpan.textContent);
         arrListItems.splice(arrListItems.indexOf(textSpan.textContent), 1);
-        console.log(arrListItems);
         localStorage.setItem('myList', JSON.stringify(arrListItems));
         newDivElement.remove();
     }
@@ -41,8 +46,15 @@ function createListItem(listItem) {
 }
 
 function addItem() {
-    createListItem(txtitem.value);
-    arrListItems.push(txtitem.value);
-    localStorage.setItem('myList', JSON.stringify(arrListItems));
-    txtitem.value = '';
+    console.log(txtitem.value)
+    if (txtitem.value != '') {
+        emptyInputAlert.classList.add("d-none"); // Hide alert if it was shown
+        createListItem(txtitem.value);
+        arrListItems.push(txtitem.value);
+        localStorage.setItem('myList', JSON.stringify(arrListItems));
+        txtitem.value = '';
+    } else {
+        emptyInputAlert.classList.remove("d-none"); // Show the alert
+        txtitem.value = '';
+    }
 }
