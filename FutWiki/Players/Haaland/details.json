@@ -1,0 +1,13 @@
+{
+    "pname"     : "Erling Haaland",
+    "dob"       : "21/6/2000",
+    "birthYear" : "2000",
+    "hieght"    : "194",
+    "shirt"     : "9",
+    "country"   : "NOR",
+    "matches"   : "31",
+    "goals"     : "22",
+    "assist"    : "3",
+    "position"  : "ST",
+    "team"      : "Manchester City"
+}

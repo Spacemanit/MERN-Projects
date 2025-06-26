@@ -43,23 +43,23 @@ function initialiser() {
     let difficulty = document.querySelector('input[name="difficulty"]:checked').value;
     switch (difficulty) {
         case 'easy':
-                words = allWords.easy // Use a copy
-                timePerWord = 7,
+            words = allWords.easy // Use a copy
+            timePerWord = 7,
                 getReadyTime = 3,
                 totalGameTime = 60 // seconds
             break;
         case 'hard':
-                words = allWords.hard,
+            words = allWords.hard,
                 timePerWord = 4,
                 getReadyTime = 2,
                 totalGameTime = 60
             break;
         case 'medium':
         default:
-                words = allWords.medium;
-                timePerWord = 5; // Adjusted from original complex logic
-                getReadyTime = 3;
-                totalGameTime = 60;
+            words = allWords.medium;
+            timePerWord = 5; // Adjusted from original complex logic
+            getReadyTime = 3;
+            totalGameTime = 60;
             break;
     }
     gameStart();
@@ -121,6 +121,12 @@ function checkWord() {
         wordmaker();
         bonusscore++;
         score++;
+        inputword.classList.remove('bg-gray-800')
+        inputword.classList.add('bg-emerald-300')
+        setTimeout(() => {
+            inputword.classList.add('bg-gray-800')
+            inputword.classList.remove('bg-emerald-300')
+        }, 75);
         txtscore.innerHTML = "Score: " + score.toString();
         bonusmaker();
     }
@@ -160,6 +166,10 @@ function gameStart() {
 
         if (count == 60) {
             gameOver();
+        }
+        if (count >= 50) {
+            globaltimer.classList.remove('text-white');
+            globaltimer.classList.add('text-red-500', 'font-bold')
         }
         time--;
     }, 1000);

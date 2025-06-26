@@ -1,0 +1,13 @@
+{
+    "pname": "Lionel Messi",
+    "dob": "24/6/1987",
+    "birthYear": "1987",
+    "hieght": "170",
+    "shirt": "10",
+    "country": "ARG",
+    "matches": "13",
+    "goals": "10",
+    "assist": "5",
+    "position": "ST",
+    "team" : "Inter Miami FC"
+}

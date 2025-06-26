@@ -4,196 +4,72 @@ Basic Structure written by me-->
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Type Master</title>
-  </head>
 
-  <body
-    style="
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212; /* Dark Theme Main Background */
-      color: #e0e0e0; /* Dark Theme Primary Text */
-      margin: 0;
-      padding: 20px;
-      text-align: center;
-    "
-  >
-    <div
-      id="divtimerGlobal"
-      style="
-        float: right;
-        background-color: #1e1e1e; /* Dark Theme Surface Background */
-        border: 1px solid #333333; /* Dark Theme Subtle Border */
-        border-radius: 8px;
-        padding: 10px 15px;
-        margin: 0 0 10px 10px;
-        font-size: 1em;
-        color: #e0e0e0; /* Dark Theme Primary Text */
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        min-width: 160px;
-        text-align: left;
-      "
-    >
+<head>
+  <meta charset="UTF-8" />
+  <title>Type Master</title>
+  <link href="./output.css" rel="stylesheet">
+</head>
+
+<body class=" bg-gray-900">
+  <div class="container flex flex-row-reverse">
+    <div id="divtimerGlobal"
+      class="w-20 h-4 bg-[#1e1e1e] border-2 border-cyan-300 rounded-2xl m-2.5 text-[8px] text-white text-center ">
       Time Left: 60s
     </div>
 
-    <div
-      id="divHighScore"
-      style="
-        float: right;
-        background-color: #1e1e1e; /* Dark Theme Surface Background */
-        border: 1px solid #333333; /* Dark Theme Subtle Border */
-        border-radius: 8px;
-        padding: 10px 15px;
-        margin: 0 0 10px 10px;
-        font-size: 1em;
-        color: #e0e0e0; /* Dark Theme Primary Text */
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        min-width: 130px;
-        text-align: left;
-      "
-    >
+    <div id="divHighScore"
+      class="w-20 h-4 bg-[#1e1e1e] border-2 border-cyan-300 rounded-2xl m-2.5 text-[8px] text-white text-center">
       High Score: 0
     </div>
 
-    <div
-      id="divscore"
-      style="
-        float: right;
-        background-color: #1e1e1e; /* Dark Theme Surface Background */
-        border: 1px solid #333333; /* Dark Theme Subtle Border */
-        border-radius: 8px;
-        padding: 10px 15px;
-        margin: 0 0 10px 10px;
-        font-size: 1em;
-        color: #e0e0e0; /* Dark Theme Primary Text */
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        min-width: 130px;
-        text-align: left;
-      "
-    >
+    <div id="divscore"
+      class="w-20 h-4 bg-[#1e1e1e] border-2 border-cyan-300 rounded-2xl m-2.5 text-[8px] text-white text-center">
       Score: 0
     </div>
+  </div>
 
-    <div style="clear: both; padding-top: 10px">
-      <h1
-        style="
-          color: #bb86fc; /* Dark Theme Primary Accent */
-          margin-bottom: 30px;
-          font-size: 2.8em;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-        "
-      >
-        Type Master
-      </h1>
+  <div class="grid grid-cols-1 gap-1 w-fit mx-auto place-items-center -mt-1">
+    <h1 class="text-center text-cyan-600 text-[40px] font-extrabold font-mono">
+      TYPE MASTER
+    </h1>
 
-      <div
-        id="timer"
-        style="
-          font-size: 2em;
-          font-weight: bold;
-          color: #cf6679; /* Dark Theme Urgent/Timer Text */
-          margin: 20px auto 20px auto;
-          background-color: #1e1e1e; /* Dark Theme Surface Background */
-          border: 4px solid #cf6679; /* Dark Theme Urgent/Timer Border */
-          border-radius: 50%;
-          width: 65px;
-          height: 65px;
-          line-height: 65px;
-          display: block;
-          box-shadow: 0 2px 4px rgba(231, 76, 60, 0.3);
-        "
-      >
-        0
-      </div>
-
-      <div style="margin-bottom: 20px; color: #e0e0e0;">
-        <label style="margin-right: 10px;"><input type="radio" name="difficulty" value="easy" > Easy</label>
-        <label style="margin-right: 10px;"><input type="radio" name="difficulty" value="medium" checked> Medium</label>
-        <label><input type="radio" name="difficulty" value="hard"> Hard</label>
-      </div>
-
-      <input
-        type="Button"
-        id="divButton"
-        value="Start"
-        onclick="initialiser()"
-        style="
-          background-color: #bb86fc; /* Dark Theme Primary Accent */
-          color: #000000; /* Dark Theme Button Text (on accent) */
-          border: none;
-          padding: 12px 25px;
-          font-size: 1.1em;
-          font-weight: 600;
-          border-radius: 5px;
-          cursor: pointer;
-          margin: 20px auto 25px auto;
-          display: block;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-          transition: background-color 0.2s ease;
-        "
-      />
-
-      <div
-        id="divwords"
-        style="
-          font-size: 2.7em;
-          font-family: 'Courier New', Courier, monospace;
-          font-weight: bold;
-          letter-spacing: 1px;
-          color: #e0e0e0; /* Dark Theme Primary Text */
-          margin: 25px auto;
-          padding: 25px 30px;
-          background-color: #1e1e1e; /* Dark Theme Surface Background */
-          border: 2px dashed #03dac6; /* Dark Theme Secondary Accent */
-          border-radius: 8px;
-          min-height: 55px;
-          display: inline-block;
-          min-width: 380px;
-          max-width: 90%;
-          box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
-          line-height: 1.4;
-        "
-      >
-        Words will appear here
-      </div>
-
-      <input
-        type="text"
-        id="txtInput"
-        onkeyup="checkWord()"
-        style="
-          background-color: #1e1e1e; /* Dark Theme Surface Background */
-          color: #e0e0e0; /* Dark Theme Primary Text */
-          padding: 12px 15px;
-          font-size: 1.3em;
-          font-family: 'Courier New', Courier, monospace;
-          border: 2px solid #03dac6; /* Dark Theme Secondary Accent */
-          border-radius: 6px;
-          width: 380px;
-          max-width: 85%;
-          margin: 20px auto;
-          display: block;
-          box-sizing: border-box;
-          text-align: center;
-          box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-        "
-      />
+    <div id="timer"
+      class="w-16 h-16 p-1.5 text-[30px] text-cyan-600 border-4 border-gray-600 rounded-full shadow-cyan-300 shadow-2xl text-center align-middle font-mono font-bold">
+      0
     </div>
-    <script>
-      window.onload = function () {
-        if (localStorage.getItem("highScore")) {
-          lshighScore = localStorage.getItem("highScore");
-          document.getElementById("divHighScore").innerHTML = "High Score: " + lshighScore.toString();
-        } else {
-          localStorage.setItem("highScore", 0);
-        }
-      };
-    </script>
-    <script src="script.js"></script>
-  </body>
+
+    <div class="flex flex-row place-items-center mb-1 mt-2 text-white">
+      <label class="mr-2.5 text-[10px]"><input type="radio" name="difficulty" value="easy"
+          class="h-2.5 w-2.5 accent-cyan-200"> Easy</label>
+      <label class="mr-2.5 text-[10px]"><input type="radio" name="difficulty" value="medium"
+          class="h-2.5 w-2.5 accent-cyan-200" checked> Medium</label>
+      <label class="mr-2.5 text-[10px]"><input type="radio" name="difficulty" value="hard"
+          class="h-2.5 w-2.5 accent-cyan-200"> Hard</label>
+    </div>
+
+    <input type="Button" id="divButton" value="START" onclick="initialiser()"
+      class="bg-cyan-600 hover:bg-cyan-800 hover:text-gray-100 px-3 pt-0.5 rounded-md font-mono hover:shadow-cyan-300 hover:shadow-lg transition duration-100 active:translate-y-0.5" />
+
+    <div id="divwords"
+      class="text-2xl text-white font-mono bg-gray-800 mt-1  px-3 border-2 border-cyan-300 rounded-2xl w-100 h-8 text-center">
+      Words will appear here
+    </div>
+
+    <input type="text" id="txtInput" onkeyup="checkWord()"
+      class="text-2xl text-white font-mono bg-gray-800 mt-1  px-3 border-2 border-cyan-300 rounded-2xl w-100 h-10 text-center transition-colors duration-75" />
+  </div>
+  <script>
+    window.onload = function () {
+      if (localStorage.getItem("highScore")) {
+        lshighScore = localStorage.getItem("highScore");
+        document.getElementById("divHighScore").innerHTML = "High Score: " + lshighScore.toString();
+      } else {
+        localStorage.setItem("highScore", 0);
+      }
+    };
+  </script>
+  <script src="script.js"></script>
+</body>
+
 </html>

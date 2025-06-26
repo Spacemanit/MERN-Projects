@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone Paper Scissors</title>
+    <link href="./styleoutput.css" rel="stylesheet">
+</head>
+<body class="bg-black" id="#body">
+    <div class="container flex flex-row-reverse">
+    <div id="divscore"
+      class="w-20 h-4 bg-[#1e1e1e] border-2 border-cyan-300 rounded-2xl m-2.5 text-[8px] text-white text-center">
+      Score: 0-0
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 gap-1 w-fit mx-auto place-items-center -mt-1">
+    <h1 class="text-center text-cyan-600 text-[40px] font-extrabold font-mono">
+      STONE PAPER SCISSORS
+    </h1>
+    <div class="flex flex-row">
+        <button class="text-[30px] w-15 h-15 rounded-full border-2 border-gray-600 mx-2 transition duration-100 active:translate-y-0.5" id="r" onclick="check('r')">🪨</button>
+        <button class="text-[30px] w-15 h-15 rounded-full border-2 border-gray-600 mx-2 transition duration-100 active:translate-y-0.5" id="p" onclick="check('p')">📄</button>
+        <button class="text-[30px] w-15 h-15 rounded-full border-2 border-gray-600 mx-2 transition duration-100 active:translate-y-0.5" id="s" onclick="check('s')">✂️</button>
+    </div>
+    <div class="w-30 h-4 bg-[#1e1e1e] border-2 border-cyan-300 rounded-2xl m-2.5 text-[8px] text-white text-center" id="winner">CHOOSE!</div>
+    <Script src="index.js"></Script>
+</body>
+</html>

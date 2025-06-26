@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="./styleoutput.css" rel="stylesheet" />
+    <title>Login Page</title>
+</head>
+
+<body class="bg-black flex flex-col place-items-center min-h-screen">
+    <form method="get" action="http://localhost:8000/save" class="flex flex-col gap-2 mt-4">
+        <input type="text" name="usr" placeholder="Enter Username" class="bg-white text-black p-2 rounded" />
+        <input type="text" name="pass" placeholder="Enter Password" class="bg-white text-black p-2 rounded" />
+        <div class="flex flex-row gap-2 mx-auto">
+            <input type="submit" value="Sign Up"
+                class="bg-gray-500 hover:bg-gray-800 hover:text-white hover:shadow-2xl hover:shadow-black p-2 rounded cursor-pointer" />
+            <input type="submit" value="Login"
+                class="bg-gray-500 hover:bg-gray-800 hover:text-white hover:shadow-2xl hover:shadow-black p-2 rounded cursor-pointer" />
+        </div>
+    </form>
+</body>
+
+</html>
