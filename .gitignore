@@ -1,3 +1,4 @@
-/Express_Example/node_modules
-/FutWiki/node_modules
-/MusicPlayer/node_modules
+node_modules
+.parcel-cahe
+dist
+.parcel-cache/

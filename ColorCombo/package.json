@@ -1,0 +1,17 @@
+{
+  "name": "colorcombo",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel main.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "color-2-name": "^1.4.4",
+    "express": "^5.1.0",
+    "hex-color-to-color-name": "^1.0.2",
+    "nodemon": "^3.1.10",
+    "parcel": "^2.15.4"
+  },
+  "description": ""
+}
