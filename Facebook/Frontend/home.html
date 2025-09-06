@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./output.css">
+  <title>Home</title>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+  <!-- Header Bar -->
+  <div class="bg-white shadow-md p-4 flex justify-between items-center">
+    <div class="flex items-center gap-4">
+      <img src="./assets/facebook_logo.svg" alt="Logo" class="h-10">
+      <div class="text-2xl font-semibold">MySocial</div>
+    </div>
+    <button id="addPostButton" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
+      + Add Post
+    </button>
+  </div>
+
+  <!-- Main Content Flex Layout -->
+  <div class="flex flex-row gap-4 p-6">
+    <!-- Left Sidebar -->
+    <div class="w-1/5 bg-white rounded-xl shadow p-4">
+      <div class="flex justify-between items-center bg-white rounded-xl shadow p-4 my-2">
+        <h2 class="text-lg font-semibold mb-2">Friends</h2>
+        <button id="addFriendButton" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
+          + Add Friend
+        </button>
+        <input type="text" id="searchInput" placeholder="Search" style="display:none" class="w-2/5">
+      </div>
+      <div id="friendList" class="space-y-2"></div>
+    </div>
+
+    <!-- Center Feed -->
+    <div class="flex-1 bg-white rounded-xl shadow p-4">
+      <h2 class="text-lg font-semibold mb-4">Feed</h2>
+      <div id="postList" class="space-y-4"></div>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div class="w-1/5 bg-white rounded-xl shadow p-4">
+      <h2 class="text-lg font-semibold mb-2">Friend Requests</h2>
+      <div id="pendingList" class="space-y-2"></div>
+    </div>
+  </div>
+
+  <script src="homePageScript.js"></script>
+  <script>
+    document.getElementById('addFriendButton').addEventListener('click', function () {
+            document.getElementById('searchInput').style.display = 'block';
+            document.getElementById('addFriendButton').style.display = 'none';
+        });
+  </script>
+</body>
+
+</html>

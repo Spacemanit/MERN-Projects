@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Post</title>
+  <link href="./output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 min-h-screen flex justify-center items-start pt-10">
+
+  <div class="w-full max-w-xl bg-white rounded-2xl shadow-lg p-6">
+    <!-- Header input -->
+    <div class="flex items-center space-x-4 mb-4">
+      <input type="text" placeholder="What's on your mind, User?"
+        class="flex-1 px-4 py-2 rounded-full bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        id="headerInput" />
+    </div>
+
+    <hr class="my-3" />
+
+    <!-- File upload and preview -->
+    <div class="mb-4">
+      <label for="inputFile"
+        class="flex items-center space-x-2 cursor-pointer hover:bg-gray-100 px-3 py-2 rounded-md text-sm text-gray-700">
+        <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M21 19V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2zm-2 0H5V5h14v14zm-4-9l-2.5 3.01L11 11l-3 4h10l-3-4z" />
+        </svg>
+        <span>Attach Photo/Video</span>
+        <input type="file" class="hidden" accept="image/*,video/*" id="inputFile" multiple />
+      </label>
+      <div id="previewContainer" class="mt-4 grid grid-cols-3 gap-2"></div>
+    </div>
+
+    <!-- Post button -->
+    <div class="mt-4 flex justify-end">
+      <button class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-600 transition" id="postButton">
+        Post
+      </button>
+    </div>
+  </div>
+  <script src="/addPostPageScript.js"></script>
+</body>
+
+</html>

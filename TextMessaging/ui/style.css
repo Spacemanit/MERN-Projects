@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+/* ✅ Background colors (with all shades) */
+@source inline("bg-{slate,gray,zinc,neutral,stone,red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose}-{50,{100..900..100},950}");
+
+/* ✅ Margin spacing (all directions) */
+@source inline("m-{0,0.5,1,1.5,2,2.5,3,3.5,4,5,6,8,10,12,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96,auto}");
+@source inline("m{x,y,t,b,l,r}-{0,0.5,1,1.5,2,2.5,3,3.5,4,5,6,8,10,12,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96,auto}");
+
+/* ✅ Padding spacing (all directions) */
+@source inline("p-{0,0.5,1,1.5,2,2.5,3,3.5,4,5,6,8,10,12,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96}");
+@source inline("p{x,y,t,b,l,r}-{0,0.5,1,1.5,2,2.5,3,3.5,4,5,6,8,10,12,16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96}");
+
+/* ✅ Border utilities */
+@source inline("border");
+@source inline("border-{0,2,4,8}");
+@source inline("border-{slate,gray,zinc,neutral,stone,red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose}-{50,{100..900..100},950}");
+
+/* ✅ Hover variants for background and border */
+@source inline("hover:bg-{slate,gray,zinc,neutral,stone,red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose}-{100,200,300,400,500,600,700,800,900}");
+@source inline("hover:border-{slate,gray,zinc,neutral,stone,red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose}-{100,200,300,400,500,600,700,800,900}");

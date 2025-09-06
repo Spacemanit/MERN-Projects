@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-
+app.use('Music', express.static(__dirname + 'Music'));
 
 app.get("/home", (req, res) => {
     let html = "<html><body>";

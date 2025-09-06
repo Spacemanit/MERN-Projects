@@ -1,4 +1,4 @@
-let divinputcolor1 = document.querySelector('#divChosenColor1')
+let divinputcolor1 = document.querySelector('#divChosenColor')
 let divButton = document.querySelector('#divButton');
 let holder = document.querySelector('#divholder');
 
@@ -6,7 +6,7 @@ import { getName } from './colorname.js';
 
 function getColor() {
     let inputColor1 = divinputcolor1.value
-    
+
     const baseHex1 = inputColor1.startsWith("#") ? inputColor1 : "#" + inputColor1;
 
     const generatedColors = generatePalette(baseHex1) // generateColorBlend(baseHex1, baseHex2, 7);
@@ -22,8 +22,30 @@ function getColor() {
         colortext.innerHTML = getName(color).toUpperCase();
 
         let colorBox = document.createElement('div');
-        colorBox.classList.add('w-50', 'h-40', 'm-2.5', 'border-2', 'border-gray-300');
+        colorBox.classList.add('w-50', 'h-50', 'm-2.5', 'border-2', 'border-white', 'flex');
         colorBox.style.background = color;
+
+        // The overlay text that appears on hover
+        let hoverOverlayText = document.createElement('input');
+        hoverOverlayText.type = 'button';
+        hoverOverlayText.addEventListener('click', ()=>{
+            navigator.clipboard.writeText(color);
+            hoverOverlayText.value = "Copied!";
+            setTimeout(()=>{
+                hoverOverlayText.value=color;
+            }, 500);
+        });
+        hoverOverlayText.classList.add(
+            'w-50', 'text-center', 'py-15',
+            'items-center', 'justify-center', // Center content horizontally and vertically
+            'bg-black', 'bg-opacity-30', // Semi-transparent black background
+            `text-white`, 'text-xl', 'font-mono', // Text styling
+            'rounded', // Match border-radius of parent
+            'opacity-0', 'transition-opacity', 'duration-300', // Initially hidden, smooth transition
+            'hover:opacity-50', // Show on hover of the 'group' parent
+        );
+        hoverOverlayText.value = color;
+        colorBox.appendChild(hoverOverlayText);
 
         eachholder.appendChild(colortext);
         eachholder.appendChild(colorBox);
@@ -82,7 +104,7 @@ function generatePalette(baseColorHex) {
     //SPLIT COMPLEMENTARY PALETTE
     const compHue = (h + 180) % 360;
     const angleOffset = 30; // Adjust this angle for more or less "split"
-    
+
     palette.push(rgbToHex(...hslToRgb((compHue - angleOffset + 360) % 360, s, l)));
     palette.push(rgbToHex(...hslToRgb((compHue + angleOffset) % 360, s, l)));
     // Optionally add variations of the split complements for more options

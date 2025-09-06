@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="flex flex-row place-content-center">
+        <img src="./assets/message-square-chat-svgrepo-com.png" class="w-50 h-50">
+        <h1 class="text-9xl text-black p-8">Messages</h1>
+    </div>
+    <div class="flex flex-row place-content-center">
+        <div class="grid grid-cols-2 grid-rows-3 gap-10 gap-x-5 w-150 px-40 py-4 my-4 border-3 border-black" id="gridd">
+            <input class="col-span-2 border-2" type="email" id="divEmail" placeholder="Email">
+            <input class="col-span-2 border-2" type="text" id="divUsername" placeholder="Username">
+            <input class="col-span-2 border-2" type="password" id="divPassword" placeholder="Password">
+            <input class="border-2 transition duration-100 active:translate-y-0.5" type="button" id="loginbutton" value="Login">
+            <input class="col-start-2 border-2 transition duration-100 active:translate-y-0.5" type="button" id="newUserButton" value="New User?">
+            <input class="col-start-2 border-2 transition duration-100 active:translate-y-0.5" type="button" id="signupButton" value="SignUp">
+        </div>
+    </div>
+    <script>
+        document.getElementById('signupButton').style.display = 'none';
+    </script>
+    <script src="/loginPageScript.js" defer></script>
+</body>
+
+</html>
